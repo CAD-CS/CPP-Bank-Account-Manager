@@ -17,5 +17,6 @@ class BankAccount
 		
 		int deposit(int amount);
 		int withdraw(int amount);
+		std::string getName();
 		void print();
 };

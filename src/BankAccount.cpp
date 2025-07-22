@@ -34,3 +34,8 @@ void BankAccount::print()
 {
 	std::cout << "Full name: " + m_firstName + " " + m_lastName + " | Balance : " << m_balance << std::endl; 
 }
+
+std::string getName()
+{
+	return m_firstName + " " + m_lastName;
+}
