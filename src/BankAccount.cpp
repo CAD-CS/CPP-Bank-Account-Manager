@@ -1,7 +1,7 @@
 #include <fstream>
 #include <iostream>
 
-#include "BankAccount.hpp"
+#include "../include/BankAccount.hpp"
 
 BankAccount::BankAccount(std::string first, std::string last)
 	: m_firstName(first), 
