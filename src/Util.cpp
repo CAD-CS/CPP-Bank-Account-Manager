@@ -31,8 +31,12 @@ std::vector<BankAccount*> createAccounts()
 	return vec_bankAccount;
 }
 
-void displayCommands() 
+void displayCommandsMain() 
 {
-	std::cout << "| Exit (q) " << std::endl;
+	std::cout << "| Exit (q) " << "| Select account (s)" << std::endl;
 }
 
+void displayCommandsAccount()
+{
+  std::cout << "| Deposit (d) " << "| Withdraw (w) " << "| Transfer (t) "<< "| Back to main menu (b)" << std::endl;
+}

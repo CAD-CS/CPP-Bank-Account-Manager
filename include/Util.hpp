@@ -3,4 +3,5 @@
 #include "BankAccount.hpp"
 
 std::vector<BankAccount*> createAccounts();
-void displayCommands();
+void displayCommandsMain();
+void displayCommandsAccount();

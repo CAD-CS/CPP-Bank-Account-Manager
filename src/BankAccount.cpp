@@ -33,7 +33,7 @@ int BankAccount::withdraw(int amount)
 
 void BankAccount::print() 
 {
-    std::cout << "Full name: " << m_firstName << " " << m_lastName << " | Balance : " << m_balance << std::endl; 
+    std::cout << "Full name: " << getName() << " | Balance : " << m_balance << std::endl; 
 }
 
 std::string BankAccount::getName()
