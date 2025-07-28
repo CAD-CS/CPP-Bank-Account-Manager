@@ -1,3 +1,4 @@
+#include <fstream>
 #include <iostream>
 
 #include "BankAccount.hpp"
@@ -32,10 +33,10 @@ int BankAccount::withdraw(int amount)
 
 void BankAccount::print() 
 {
-	std::cout << "Full name: " + m_firstName + " " + m_lastName + " | Balance : " << m_balance << std::endl; 
+    std::cout << "Full name: " << m_firstName << " " << m_lastName << " | Balance : " << m_balance << std::endl; 
 }
 
-std::string getName()
+std::string BankAccount::getName()
 {
-	return m_firstName + " " + m_lastName;
+    return m_firstName + " " + m_lastName;
 }
