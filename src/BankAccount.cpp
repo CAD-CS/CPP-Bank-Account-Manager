@@ -40,3 +40,8 @@ std::string BankAccount::getName()
 {
     return m_firstName + " " + m_lastName;
 }
+
+int BankAccount::getBalance() 
+{
+    return m_balance;
+}

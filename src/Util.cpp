@@ -38,5 +38,5 @@ void displayCommandsMain()
 
 void displayCommandsAccount()
 {
-  std::cout << "| Deposit (d) " << "| Withdraw (w) " << "| Transfer (t) "<< "| Back to main menu (b)" << std::endl;
+  std::cout << "| Deposit (d) " << "| Withdraw (w) " << "| Transfer to another account (t) "<< "| Back to main menu (b)" << std::endl;
 }

@@ -12,12 +12,13 @@ class ApplicationState
         MAIN_MENU,
         ACCOUNT_MENU,
         SELECTED_MENU,
-        EXIT
+        TRANSFER_MENU
     };
 
     std::vector<BankAccount*> m_accounts;
     int m_selectedAccountIndex;
     bool m_running;
+    enum State m_currentState;
 
     ApplicationState(std::vector<BankAccount*>& accounts);
     ~ApplicationState();

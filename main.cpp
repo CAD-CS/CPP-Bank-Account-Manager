@@ -45,9 +45,10 @@ int main(int argc, char *argv[])
         {
           std::cout << "Selected account: ";
           state.m_accounts[state.m_selectedAccountIndex]->print();
+          state.m_currentState = ApplicationState::SELECTED_MENU;
+          handleSelectedMenu(state);
         }
       }
-      handleSelectedMenu(state);
       break;
 
     default:

@@ -7,7 +7,8 @@
 ApplicationState::ApplicationState(std::vector<BankAccount*>& accounts)
     : m_selectedAccountIndex(-1),
       m_running(true),
-      m_accounts(accounts)
+      m_accounts(accounts),
+      m_currentState(MAIN_MENU)
 {
   std::cout << "ApplicationState initialized." << std::endl;
 }
