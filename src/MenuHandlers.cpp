@@ -4,9 +4,9 @@
 #include "../include/Util.hpp"
 #include "../include/BankAccount.hpp"
 
-void handleSelectedMenu(ApplicationState& state) 
+void handleSelectedMenu(Application& state) 
 {
-  while (state.m_currentState == ApplicationState::SELECTED_MENU)
+  while (state.m_currentState == Application::SELECTED_MENU)
   {
     displayCommandsAccount();
     std::cout << "Enter command: ";
@@ -15,7 +15,7 @@ void handleSelectedMenu(ApplicationState& state)
     switch (cmd)
     {
       case 'b':
-        state.m_currentState = ApplicationState::MAIN_MENU;
+        state.m_currentState = Application::MAIN_MENU;
         std::cout << "Returning to main menu." << std::endl;
         break;
       case 'd':
@@ -62,11 +62,12 @@ void handleSelectedMenu(ApplicationState& state)
   }    
 }
 
-void handleTransferMenu(ApplicationState& state) 
+void handleTransferMenu(Application& state) 
 {
   std::cout << "Transfer functionality is not implemented yet." << std::endl;
-  while (state.m_currentState == ApplicationState::TRANSFER_MENU)
+  while (state.m_currentState == Application::TRANSFER_MENU)
   {
+    displayAccounts(state.m_accounts);
     std::cout << "Select an account to transfer to (0 to " 
               << state.m_accounts.size() - 1 << "): ";
     int targetAccountIndex;
@@ -93,15 +94,13 @@ void handleTransferMenu(ApplicationState& state)
                 << ". New balance: " 
                 << state.m_accounts[state.m_selectedAccountIndex]->getBalance() 
                 << std::endl;
-      state.m_currentState = ApplicationState::SELECTED_MENU;
-    } else
+      state.m_currentState = Application::SELECTED_MENU;
+    } 
+    else
     {
       std::cout << "Transfer failed due to insufficient funds." << std::endl;
     }
   std::cout << "Returning to selected menu." << std::endl;
-  state.m_currentState = ApplicationState::SELECTED_MENU;
-  } else {
-    std::cout << "Transfer cancelled." << std::endl;
-    state.m_currentState = ApplicationState::SELECTED_MENU;
+  state.m_currentState = Application::SELECTED_MENU;
   }
 }

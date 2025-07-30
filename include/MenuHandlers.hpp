@@ -1,4 +1,6 @@
-#include "ApplicationState.hpp"
+#pragma once
 
-void handleSelectedMenu(ApplicationState& state);
-void handleTransferMenu(ApplicationState& state);
+#include "Application.hpp"
+
+void handleSelectedMenu(Application& state);
+void handleTransferMenu(Application& state);
