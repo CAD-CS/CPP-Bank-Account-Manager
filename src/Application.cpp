@@ -35,11 +35,11 @@ void Application::displayCommands()
   }
 }
 
-void Application::getCommand(char &cmd)
+void Application::processCommand(char &cmd)
 {
   if (m_menu)
   {
-    m_menu->getCommand(cmd);
+    m_menu->processCommand(cmd);
   }
   else
   {
@@ -55,4 +55,20 @@ void Application::changeMenu(IMenu* newMenu)
   }
   m_menu = newMenu;
   std::cout << "Menu changed." << std::endl;
+}
+
+void Application::displayAccounts()
+{
+  if (m_accounts.empty())
+  {
+    std::cout << "No accounts available." << std::endl;
+    return;
+  }
+
+  std::cout << "Available accounts:" << std::endl;
+  for (size_t i = 0; i < m_accounts.size(); ++i)
+  {
+    std::cout << i << ": ";
+    m_accounts[i]->print();
+  }
 }

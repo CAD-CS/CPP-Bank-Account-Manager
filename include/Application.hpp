@@ -19,7 +19,8 @@ class Application
     Application(std::vector<BankAccount*> accounts);
     ~Application();
     void displayCommands();
-    void getCommand(char &cmd);
+    void processCommand(char &cmd);
     void changeMenu(IMenu* newMenu);
+    void displayAccounts();
     
 };

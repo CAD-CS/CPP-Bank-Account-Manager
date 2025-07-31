@@ -10,8 +10,11 @@ class IMenu
   public:
   IMenu(Application& app) : application(app) {}
   virtual void displayCommands() = 0;
-  virtual void getCommand(char &cmd) = 0;
-  virtual void changeMenu(IMenu* newMenu) = 0;
+  virtual void processCommand(char &cmd) = 0;
+  virtual void changeMenu(IMenu* newMenu) 
+  {
+    application.changeMenu(newMenu);
+  }
   virtual ~IMenu() = default;
 };
 
