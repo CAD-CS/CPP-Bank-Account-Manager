@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Application.hpp"
+class Application;
 
 class IMenu
 {
@@ -11,10 +11,7 @@ class IMenu
   IMenu(Application& app) : application(app) {}
   virtual void displayCommands() = 0;
   virtual void processCommand(char &cmd) = 0;
-  virtual void changeMenu(IMenu* newMenu) 
-  {
-    application.changeMenu(newMenu);
-  }
+  virtual void changeMenu(IMenu* newMenu);
   virtual ~IMenu() = default;
 };
 

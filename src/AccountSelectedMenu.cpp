@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "../include/Application.hpp"
 #include "../include/AccountSelectedMenu.hpp"
 #include "../include/MainMenu.hpp"
 
@@ -18,27 +19,27 @@ void AccountSelectedMenu::processCommand(char &cmd)
     return;
 
   case 'd':
-    int amount;
+    int depositAmount;
     std::cout << "Amount to deposit: " << std::endl;
-    std::cin >> amount;
+    std::cin >> depositAmount;
 
-    if (amount <= 0) std::cout << "Invalid deposit amount." << std::endl;
+    if (depositAmount <= 0) std::cout << "Invalid deposit amount." << std::endl;
 
-    application.m_accounts[application.m_selectedAccountIndex]->deposit(amount);
+    application.m_accounts[application.m_selectedAccountIndex]->deposit(depositAmount);
     return;
 
   case 'w':
-    int amount;
+    int withdrawAmount;
     std::cout << "Amount to withdraw: " << std::endl;
-    std::cin >> amount;
+    std::cin >> withdrawAmount;
 
-    if (amount <= 0 || amount > application.m_accounts[application.m_selectedAccountIndex]->getBalance()) 
+    if (withdrawAmount <= 0 || withdrawAmount > application.m_accounts[application.m_selectedAccountIndex]->getBalance()) 
     {
       std::cout << "Invalid withdrawal amount." << std::endl;
       return;
     }
 
-    application.m_accounts[application.m_selectedAccountIndex]->withdraw(amount);
+    application.m_accounts[application.m_selectedAccountIndex]->withdraw(withdrawAmount);
     return;
 
   case 't':
@@ -54,16 +55,17 @@ void AccountSelectedMenu::processCommand(char &cmd)
     }
 
     std::cout << "Amount to transfer: " << std::endl;
-    std::cin >> amount;
+    int transferAmount;
+    std::cin >> transferAmount;
 
-    if (amount <= 0 || amount > application.m_accounts[application.m_selectedAccountIndex]->getBalance())
+    if (transferAmount <= 0 || transferAmount > application.m_accounts[application.m_selectedAccountIndex]->getBalance())
     {
       std::cout << "Invalid transfer amount." << std::endl;
       return;
     }
 
-    application.m_accounts[application.m_selectedAccountIndex]->withdraw(amount);
-    application.m_accounts[targetIndex]->deposit(amount);
+    application.m_accounts[application.m_selectedAccountIndex]->withdraw(transferAmount);
+    application.m_accounts[targetIndex]->deposit(transferAmount);
     
     return;
 

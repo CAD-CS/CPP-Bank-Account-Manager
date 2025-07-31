@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "../include/Application.hpp"
 #include "../include/MainMenu.hpp"
 #include "../include/AccountSelectedMenu.hpp"
 
