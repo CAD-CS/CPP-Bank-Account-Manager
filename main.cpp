@@ -24,10 +24,10 @@ int main(int argc, char *argv[])
     std::cout << "Enter command: ";
     std::cin >> cmd;
     app.processCommand(cmd);
-    std::this_thread::sleep_for(std::chrono::seconds(2));
+    std::this_thread::sleep_for(std::chrono::seconds(1));
     clearScreen();
-
   }
 
+  std::cout << "Exiting application." << std::endl;
   return 0;
 }

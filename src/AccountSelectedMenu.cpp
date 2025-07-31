@@ -14,7 +14,6 @@ void AccountSelectedMenu::processCommand(char &cmd)
   switch (cmd)
   {
   case 'b':
-    std::cout << "Returning to the main menu." << std::endl;
     changeMenu(new MainMenu(application));
     return;
 

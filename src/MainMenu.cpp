@@ -15,7 +15,6 @@ void MainMenu::processCommand(char &cmd)
   {
   case 'q':
     application.m_running = false;
-    std::cout << "Exiting application." << std::endl;
     return;
 
   case 's':

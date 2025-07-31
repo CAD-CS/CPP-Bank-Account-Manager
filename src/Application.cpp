@@ -10,7 +10,6 @@ Application::Application(std::vector<BankAccount*> accounts)
       m_menu(nullptr)
 {
   m_menu = new MainMenu(*this);
-  std::cout << "Application initialized." << std::endl;
 }
 
 Application::~Application()
@@ -20,7 +19,6 @@ Application::~Application()
     delete account;
   }
   m_accounts.clear();
-  std::cout << "Application destroyed." << std::endl;
 }
 
 void Application::displayCommands()
@@ -54,7 +52,6 @@ void Application::changeMenu(IMenu* newMenu)
     delete m_menu;
   }
   m_menu = newMenu;
-  std::cout << "Menu changed." << std::endl;
 }
 
 void Application::displayAccounts()
